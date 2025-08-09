@@ -5,7 +5,7 @@ A simple web application built with Svelte, TypeScript, and Vite that demonstrat
 ## Features
 
 - Switch between landscape and portrait screen orientations using browser APIs.
-- Toggle fullscreen mode for the app. (This is required to change the screen orientation)
+- Toggle fullscreen mode for the app (This is required to change the screen orientation).
 - Display the current orientation in real time.
 - Built using Svelte, TypeScript, and Vite.
 
