@@ -11,7 +11,7 @@ export default defineConfig({
       includeAssets: ['favicon.svg'],
       manifest: {
         name: 'Orientation Control',
-        short_name: 'orientation-control',
+        short_name: 'Orientation Control',
         start_url: '/',
         display: 'standalone',
         background_color: '#ffffff',
