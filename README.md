@@ -1,15 +1,14 @@
 # Orientation Control
 
 A simple web application built with Svelte, TypeScript, and Vite that demonstrates controlling and displaying device screen orientation. The project provides an interactive UI to switch between landscape and portrait orientations.
-Now with PWA (Progressive Web App) support: install the app on your device and use it offline with a native-like standalone experience.
+Now with PWA (Progressive Web App) support: install the app on your device and use it offline with a native-like fullscreen experience.
 
 ## Features
 
 - Switch between landscape and portrait screen orientations using browser APIs.
-- Toggle fullscreen mode for the app (This is required to change the screen orientation).
 - Display the current orientation in real time.
 - Built using Svelte, TypeScript, and Vite.
-- **PWA support:** Installable and works offline with a standalone experience.
+- **PWA support:** Installable and works offline with a fullscreen experience.
 
 ## Getting Started
 
