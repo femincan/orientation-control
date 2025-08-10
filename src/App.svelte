@@ -32,9 +32,8 @@
       currentTarget: EventTarget & HTMLButtonElement;
     },
   ) {
-    const orientation = e.currentTarget.dataset.orientation as string;
-
-    // @ts-expect-error wront type
+    const orientation = e.currentTarget.dataset
+      .orientation as keyof typeof orientationMap;
     screen.orientation.lock(orientation);
   }
 </script>
