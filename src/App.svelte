@@ -9,49 +9,35 @@
     'landscape-secondary': -270,
   };
 
-  let mainElement: HTMLElement;
   let orientation = $state(screen.orientation.type);
-  let fullscreen = $state(false);
 
   onMount(() => {
-    screen.orientation.addEventListener('change', () => {
+    const updateOrientation = () => {
       orientation = screen.orientation.type;
+    };
+    screen.orientation.addEventListener('change', () => {
+      updateOrientation();
     });
     document.addEventListener('fullscreenchange', () => {
-      orientation = screen.orientation.type;
-      fullscreen = document.fullscreenElement ? true : false;
+      updateOrientation();
     });
     document.addEventListener('focusin', () => {
-      orientation = screen.orientation.type;
-      fullscreen = document.fullscreenElement ? true : false;
+      updateOrientation();
     });
   });
 
-  function handleOrientationChange(
+  async function handleOrientationChange(
     e: MouseEvent & {
       currentTarget: EventTarget & HTMLButtonElement;
     },
   ) {
     const orientation = e.currentTarget.dataset
       .orientation as keyof typeof orientationMap;
-    screen.orientation.lock(orientation);
+    await screen.orientation.lock(orientation);
   }
 </script>
 
-<main bind:this={mainElement}>
-  <button
-    onclick={() => {
-      if (document.fullscreenElement) {
-        document.exitFullscreen();
-        fullscreen = false;
-      } else {
-        mainElement.requestFullscreen();
-        fullscreen = true;
-      }
-    }}
-  >
-    {fullscreen ? 'Exit Fullscreen' : 'Fullscreen'}
-  </button>
+<main>
   <div class="container">
     <button
       onclick={handleOrientationChange}
