@@ -13,7 +13,7 @@ export default defineConfig({
         name: 'Orientation Control',
         short_name: 'Orientation Control',
         start_url: '/',
-        display: 'standalone',
+        display: 'fullscreen',
         background_color: '#ffffff',
         theme_color: '#ffcc00',
         icons: [
